@@ -1,0 +1,52 @@
+#include<iostream>
+#include<string>
+#include"Temperature.h"
+using namespace std;
+
+int main()
+{
+	Temperature temp;
+	double tem;
+	char again;
+
+	cout << "-----------------------------------------------------------\n";
+	cout << "CALCULATOR OF FREEZING OR BOILING POINT OF THREE SUBSTANCES\n";
+	cout << "-----------------------------------------------------------\n";
+	
+	do {
+		cout << "Enter temperature in Fahrenheit: ";
+		cin >> tem;
+
+		temp.setTemperature(tem);
+
+		cout << "===================================================================\n";
+		if (temp.isEthylFreezing())
+			cout << "By temperature: " << temp.getTemperature() << " F is Ethyl Alcohol freezing.\n ";
+		if (temp.isEthylBoiling())
+			cout << "By temperature: " << temp.getTemperature() << " F is Ethyl Alcohol boiling.\n ";
+		if (temp.isOxygenFreezing())
+			cout << "By temperature: " << temp.getTemperature() << " F is Oxygen freezing.\n ";
+		if (temp.isOxygenBoiling())
+			cout << "By temperature: " << temp.getTemperature() << " F is Oxygen boiling.\n ";
+		if (temp.isWaterFreezing())
+			cout << "By temperature: " << temp.getTemperature() << " F is Water freezing.\n ";
+		if (temp.isWaterBoiling())
+			cout << "By temperature: " << temp.getTemperature() << " F is Water boiling.\n ";
+		cout << "=================================================================\n";
+		cout << "Do you want to continue to enter another temperature?\n";
+		cout << "Press \'Y\' for YES, or \'N\' for NO: ";
+		cin >> again;
+		
+		while(toupper(again)!='N'&&toupper(again)!='Y')
+		{
+			cout << "INVALID SELECTION !!!\n";
+			cout << "Do you want to continue to enter another temperature?\n";
+			cout << "Press \'Y\' for YES, or \'N\' for NO: ";
+			cin >> again;
+		}
+
+	} while (toupper(again) != 'N');
+	system("Pause");
+	return 0;
+
+}
