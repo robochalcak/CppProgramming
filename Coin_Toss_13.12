@@ -1,0 +1,31 @@
+#include<iostream>
+#include<string>
+#include"Coin.h";
+#include<ctime>
+#include<iomanip>
+
+using namespace std;
+
+int main()
+{
+	Coin coin;
+
+	int tails = 0;
+	int heads = 0;
+	cout << "Now tossing 20 times: \n";
+	for(int i = 0; i < 20; i++)
+	{
+		coin.toss();
+		if (coin.getSideUp() == "Tails")
+			tails++;
+		else
+			heads++;
+		cout << coin.getSideUp() << endl;
+	}
+
+	cout << "Number of heads: " << heads << endl;;
+	cout << "Number of tails: " << tails << endl;
+
+	system("Pause");
+	return 0;
+}
